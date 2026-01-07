@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管好你自己</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/color_font.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src="https://kit.fontawesome.com/513e02c78d.js" crossorigin="anonymous"></script>
+    <style>
+        .login {
+            background-color: var(--black01);
+            width: 70px;
+            height: 70px;
+            font-size: 1em;
+        }
+
+        .login:hover {
+            background-color: var(--black08);
+            color: var(--black02);
+        }
+
+        .register {
+            background-color: var(--black02);
+            color: var(--black03);
+            width: 70px;
+            height: 70px;
+            font-size: 1em;
+        }
+
+        .register:hover {
+            background-color: var(--black08);
+            color: var(--black02);
+        }
+
+
+        .saveBtn {
+            background-color: var(--black01);
+            width: 70px;
+            font-size: 1em;
+        }
+
+        .saveBtn:hover {
+            background-color: var(--black08);
+            color: var(--black02);
+        }
+
+        .cacelBtn {
+            background-color: var(--black02);
+            width: 70px;
+            font-size: 1em;
+            color: var(--black03);
+        }
+
+        .cacelBtn:hover {
+            background-color: var(--black08);
+            color: var(--black02);
+        }
+
+
+        @media (max-width:992px) {
+            .login {
+                background-color: var(--black01);
+                width: 50px;
+                height: 50px;
+                font-size: 0.75em;
+            }
+
+            .register {
+                background-color: var(--black02);
+                color: var(--black03);
+                width: 50px;
+                height: 50px;
+                font-size: 0.75em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex custom-viewport-height">
+        <!-- ----------------------導覽---------------------- -->
+        <nav class="sidebar ">
+            <div class="nav-item mt-3">
+                <a href="#"><img src="./images/icons/bubbletea-color.png" alt="" width="80px" height="80px"></a>
+                <a href="index_notReg.html" class="nav-home mt-3 active"></a>
+                <a href="diet_notReg.html" class="nav-record mt-3"></a>
+                <a href="sport_notReg.html" class="nav-run mt-3"></a>
+            </div>
+            <div class="nav-date d-flex flex-column justify-content-end align-items-center my-auto">
+                <div class="m-2" id="navyear"></div>
+                <div id="navday"></div>
+            </div>
+        </nav>
+
+        <!-- 手機底部導覽 -->
+        <nav class="bottom-nav d-flex flex-row justify-content-around align-items-center d-lg-none">
+            <div class="bottom-nav-item flex-row">
+                <a href="index_notReg.html" class="nav-home active"></a>
+                <a href="diet_notReg.html" class="nav-record"></a>
+                <a href="sport_notReg.html" class="nav-run"></a>
+            </div>
+            <div class="nav-date d-none">
+                <div class="m-2" id="navyear"></div>
+                <div id="navday"></div>
+            </div>
+        </nav>
+
+        <div class="right-content">
+
+            <!-- ----------------------頂部標題---------------------- -->
+            <header>
+                <div class="d-none d-lg-block mt-4">
+                    <div class="d-flex">
+                        <div class="d-flex align-items-baseline">
+                            <div class="title">Do Better You</div>
+                            <div class="everyday"><i class="fa-solid fa-calendar-check"></i></i>每日建議</div>
+                            <div class="reference"><i class="fa-solid fa-circle-exclamation"></i>僅供參考</div>
+                        </div>
+                        <div class="d-flex ms-auto align-items-center">
+                            <button class="btn login" data-bs-toggle="modal" data-bs-target="#loginModal">登入會員</button>
+                            <button class="btn register mx-3" data-bs-toggle="modal"
+                                data-bs-target="#registerModal">加入會員</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 手機板標題 -->
+                <div class="d-flex">
+                    <div class="d-block d-lg-none ">
+                        <div class="top-title d-flex align-items-baseline">
+                            <div class="title">Do Better You</div>
+                        </div>
+                        <div class="d-flex align-items-baseline ">
+                            <div class="everyday"><i class="fa-solid fa-calendar-check"></i></i>每日建議</div>
+                            <div class="reference"><i class="fa-solid fa-circle-exclamation"></i>僅供參考</div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex align-items-center ms-auto d-block d-lg-none ">
+                        <button class="btn login" data-bs-toggle="modal" data-bs-target="#loginModal">登入會員</button>
+                        <button class="btn register mx-3" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">加入會員</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ----------------------營養區塊---------------------- -->
+            <div class="container-fluid">
+                <div class="row g-3 mt-lg-3">
+                    <div class="col-6 col-lg-3">
+                        <div
+                            class="diet-item calorie-img bg-01 h-100 d-flex flex-column justify-content-between rounded-5">
+                            <div class="d-flex justify-content-between p-4 mt-2">
+                                <div class="h2 text-white fw-bold diet-title">卡路里</div>
+                                <!-- <img src="./images/icons/fire-s-white.png" alt="" class="box-img d-block d-lg-none"> -->
+                            </div>
+                            <div class="d-flex justify-content-between align-items-baseline p-4 ">
+                                <div class="display-5 text-white fw-bold diet-number">0</div>
+                                <div class="h4 text-white diet-unit">kcal</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div
+                            class="diet-item water-img bg-02 h-100  d-flex flex-column justify-content-between rounded-5">
+                            <div class="d-flex justify-content-between p-4 mt-2">
+                                <div class="h2 text-white fw-bold diet-title">水分</div>
+                                <!-- <img src="./images/icons/water-white.png" alt="" class="box-img d-block d-lg-none"> -->
+                            </div>
+                            <div class="d-flex justify-content-between align-items-baseline p-4 ">
+                                <div class="display-5 text-white fw-bold diet-number">0</div>
+                                <div class="h4 text-white diet-unit">cc</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6  col-lg-3">
+                        <div
+                            class="diet-item sugar-img bg-01 h-100 d-flex flex-column justify-content-between rounded-5 sugar-bgc">
+                            <div class="d-flex justify-content-between p-4 mt-2">
+                                <div class="h2 text-white fw-bold diet-title">糖分</div>
+                                <!-- <img src="./images/icons/sugar-white.png" alt="" class="box-img d-block d-lg-none"> -->
+                            </div>
+                            <div class="d-flex justify-content-between align-items-baseline p-4">
+                                <div class="display-5 text-white fw-bold diet-number">0</div>
+                                <div class="h4 text-white diet-unit">g</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6  col-lg-3">
+                        <div
+                            class="diet-item na-img bg-02 h-100 d-flex flex-column justify-content-between rounded-5 na-bgc">
+                            <div class="d-flex justify-content-between p-4 mt-2">
+                                <div class="h2 text-white fw-bold diet-title">鈉含量</div>
+                                <!-- <img src="./images/icons/na-white.png" alt="" class="box-img d-block d-lg-none"> -->
+                            </div>
+                            <div class="d-flex justify-content-between align-items-baseline p-4">
+                                <div class="display-5 text-white fw-bold diet-number">0</div>
+                                <div class="h4 text-white diet-unit">mg</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ----------------------運動區塊---------------------- -->
+            <div class="container-fluid">
+                <div class="row sport">
+                    <div class="col-12 col-md-12 col-lg-8 col-xxl-8 d-none d-lg-block ">
+                        <div class="sport-item bg-01 h-100 rounded-5 d-flex justify-content-end">
+                            <div class="slogan-img d-flex flex-column justify-content-center  fw-900">
+                                <div class="slogan h2 fw-bold ms-auto mx-4"></div>
+                                <!-- <div class="slogan h2 fw-bold mt-3 ms-auto mx-4">消耗熱量降低20%喔!</div> -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-4 col-xxl-4">
+                        <div
+                            class="sport-item sport-img bg-02 h-100 d-flex flex-column justify-content-between sport-bgc rounded-5">
+                            <div class=" d-flex p-4 mt-2 justify-content-between ">
+                                <div class="h2 fw-bold sport-title ">運動量</div>
+                                <!-- <img src="./images/icons/Doodles-black.png" alt="" class="d-block d-lg-none box-img"> -->
+                            </div>
+                            <div class="d-flex justify-content-between align-items-baseline p-4">
+                                <div class="display-5 fw-bold sport-number">0</div>
+                                <div class="h4 sport-unit">kal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LoginModal -->
+            <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-01">
+                            <h5 class="modal-title" id="exampleModalLabel">登入會員</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row g-2 ">
+                                    <div class="col-12 ">
+                                        <div class="bg-07 p-3 rounded-3">
+                                            <div>
+                                                <label for="" class="form-label">帳號：</label>
+                                                <input type="text" class="form-control watercc" placeholder="請輸入帳號"
+                                                    name="usrAccount" id="Loginaccount">
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="" class="form-label">密碼：</label>
+                                                <input type="password" class="form-control watercc" placeholder="請輸入密碼"
+                                                    name="usrPassword" id="Loginpassword">
+                                            </div>
+                                            <div>
+                                                <div class="errorBox mt-2 opacity-25"></div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <button class="btn w-100 h-25 login" id="login">登入</button>
+                                                <button class="btn w-100 mt-3 h-25 register" data-bs-toggle="modal"
+                                                    data-bs-target="#registerModal">註冊</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- registerModalModal -->
+            <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-01">
+                            <h5 class="modal-title" id="exampleModalLabel">加入會員</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row g-2 ">
+                                    <div class="col-12">
+                                        <div class=" bg-07 p-3 rounded-3">
+                                            <div>
+                                                <label for="" class="form-label">帳號</label>
+                                                <input type="text" class="form-control " id="account"
+                                                    placeholder="請輸入5-10位英文數字帳號">
+                                                <div class="opacity-25 mt-2" id="ac_valid_text"></div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="" class="form-label">密碼</label>
+                                                <input type="password" class="form-control" id="password"
+                                                    placeholder="請輸入8-12位英文數字密碼">
+                                                <div class="opacity-25 mt-2" id="pw_valid_text"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="bg-07 p-3 rounded-3 ">
+                                            <label for="" class="form-label">暱稱</label>
+                                            <input type="text" class="form-control" id="nickname" placeholder="請輸入暱稱">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="bg-07 p-3 rounded-3 h-100 ">
+                                            <div class="d-flex h-100 align-items-center">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender"
+                                                        value="male" id="maleRadios" checked>
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        男
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input" type="radio" name="gender"
+                                                        value="female" id="femaleRadios">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        女
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <div class="bg-07 p-3 rounded-3">
+                                            <label for="" class="form-label">年齡</label>
+                                            <input type="number" class="form-control" id="age" placeholder="請輸入年齡">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <div class="bg-07 p-3 rounded-3">
+                                            <label for="" class="form-label">身高 cm</label>
+                                            <input type="number" class="form-control" id="height" placeholder="請輸入身高">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <div class="bg-07 p-3 rounded-3">
+                                            <label for="" class="form-label">體重 kg</label>
+                                            <input type="number" class="form-control" id="weight" placeholder="請輸入體重">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="bg-07 p-3 rounded-3">
+                                            <label for="" class="form-label">日常活動量</label>
+                                            <select class="form-select form-select-sm" id="activity"
+                                                aria-label=".form-select-sm example">
+                                                <option selected Disabled id="activity_reset">---請選擇日常活動量---</option>
+                                                <option value="1.2">久坐（例如上班族）</option>
+                                                <option value="1.375">輕度活動（偶爾運動）</option>
+                                                <option value="1.55">中度活動（每週 3～5 次運動）</option>
+                                                <option value="1.72">高度活動（幾乎每天運動）</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn cacelBtn" data-bs-dismiss="modal">取消</button>
+                            <button type="button" class="btn saveBtn" id="register" data-bs-dismiss="modal">確定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/calender.js"></script>
+    <script src="./js/register.js"></script>
+    <script src="./js/login.js"></script>
+    <script>
+        const login = document.querySelector(".login");
+        const register = document.querySelectorAll(".register");
+        const Loginaccount = document.querySelector("#Loginaccount");
+        const Loginpassword = document.querySelector("#Loginpassword");
+
+        function resetlogin() {
+            Loginaccount.value = "";
+            Loginpassword.value = "";
+        }
+
+        register.forEach(btn => {
+            btn.addEventListener("click", () => {
+                resetReg();
+            });
+        });
+
+        function resetReg() {
+            account.value = "";
+            password.value = "";
+            nickname.value = "";
+            age.value = "";
+            height.value = "";
+            weight.value = "";
+            document.querySelector("#maleRadios").checked = true;
+            document.querySelector("#femaleRadios").checked = false;
+            document.querySelector("#activity_reset").selected = true;
+
+            account.classList.remove("is-invalid");
+            account.classList.remove("is-valid");
+            password.classList.remove("is-invalid");
+            password.classList.remove("is-valid");
+            ac_valid_text.innerHTML = "";
+            pw_valid_text.innerHTML = "";
+        }
+
+        login.addEventListener("click", () => {
+            resetlogin();
+        });
+
+
+
+        fetch("/Fitness/js/content.json")
+            .then(res => res.json())
+            .then(data => {
+                const randomIndex = Math.floor(Math.random() * data.length);
+                const randomContent = data[randomIndex];
+                document.querySelector(".slogan").textContent = randomContent.content;
+            })
+    </script>
+</body>
+
+</html>

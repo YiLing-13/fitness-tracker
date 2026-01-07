@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+
+# PHP config
+config.php
+
+# Uploads (user files)
+uploads/
+
+# Logs
+*.log

@@ -1,0 +1,617 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    font-family: "Noto Sans TC", sans-serif;
+    /* overflow: hidden; */
+
+}
+
+.right-content {
+    /* background-color: #ffe8e8; */
+    flex-grow: 1;
+    padding: 1.5rem;
+    max-width: 1500px;
+    margin-inline: auto;
+    overflow: hidden;
+    overflow-y: auto;
+    padding-left: 120px;
+
+}
+
+.sport-topheader,
+.diet-topheader {
+    padding-left: 120px;
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+.sport-topheader::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    /* background-color: #fff; */
+    border-radius: 8%;
+    background-image: url(../images/icons/Doodles-black45.png);
+    filter: drop-shadow(4px 0px 2px rgba(0, 0, 0, 0.4));
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: 100% 20%;
+}
+
+.diet-topheader::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    /* background-color: #fff; */
+    border-radius: 8%;
+    background-image: url(../images/icons/bubbletea.png);
+    filter: drop-shadow(4px 0px 2px rgba(0, 0, 0, 0.4));
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: 100% 0;
+
+}
+
+.record {
+    margin-left: 2rem;
+}
+
+.plusbtn {
+    cursor: pointer;
+    background-image: url(../images/icons/add.png);
+    width: 40px;
+    height: 40px;
+    margin-left: 0.5rem;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+
+.waterbtn {
+    cursor: pointer;
+    background-image: url(../images/icons/add.png);
+    width: 40px;
+    height: 40px;
+    margin-left: 0.5rem;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+
+.calenderbtn {
+    z-index: 1;
+}
+
+/* --------------------------日曆--------------------------------- */
+.calender {
+    background-color: var(--black03);
+    width: 350px;
+    padding: 15px;
+    margin-left: 1.5rem;
+    border-radius: 30px;
+    overflow: hidden;
+    color: var(--black06);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.modal-calendar {
+    /* 移除或覆寫原本的固定寬度和邊距 */
+    width: 90%;
+    /* 讓它在 Modal 內填滿可用空間 */
+    margin: 0;
+    /* 移除左邊距 */
+    background-color: var(--black03);
+    padding: 15px;
+    margin-left: 1.5rem;
+    border-radius: 30px;
+    overflow: hidden;
+    color: var(--black06);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+    cursor: pointer;
+}
+
+#month-year {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.days {
+    height: auto;
+}
+
+
+.weekdays div,
+.days div {
+    width: 14.28%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-size: 1;
+}
+
+.days div {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.days div:hover {
+    background-color: var(--black02);
+    color: var(--black03);
+}
+
+.days .today {
+    background-color: var(--black05);
+    color: var(--black03);
+}
+
+.days .prev-day,
+.next-day {
+    color: var(--black08);
+}
+
+.selected-day {
+    background-color: var(--black01);
+    color: var(--black03);
+    border-radius: 5px;
+}
+
+/* ----------------------water-------------------------------- */
+
+.water {
+    width: 350px;
+    height: 350px;
+    margin-left: 1.5rem;
+    background-color: var(--black03);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.waterCard {
+    width: 300px;
+}
+
+.cc {
+    width: 200px;
+}
+
+/* ------------------food-list------------------------------ */
+
+.food-list {
+    width: 100%;
+    max-width: 800px;
+    overflow-y: auto;
+    height: calc(100vh - 190px);
+    /* margin-top: 20px; */
+    /* background-color: #997a7a; */
+}
+
+.food-card {
+    width: 90%;
+    padding: 1rem 1rem;
+    background-color: var(--black03);
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.food-img img {
+    width: 130px;
+    height: 130px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.food-time {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+.food-name {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+.food-cal {
+    font-size: 1.5rem;
+}
+
+.food-sugar {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.food-na {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.food-list-remove {
+    cursor: pointer;
+    background-image: url(../images/icons/remove-black.png);
+    width: 30px;
+    height: 30px;
+    margin-left: 0.3rem;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+
+.water-remove {
+    cursor: pointer;
+    background-image: url(../images/icons/remove-black.png);
+    width: 35px;
+    height: 35px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+
+}
+
+
+
+/* ------------------sport-list------------------------------ */
+.sport-list {
+    width: 100%;
+    max-width: 800px;
+    overflow-y: auto;
+    height: calc(100vh - 190px);
+    overflow-x: hidden;
+    /* margin-top: 20px; */
+    /* background-color: #997a7a; */
+}
+
+.sport-card {
+    width: 90%;
+    padding: 1rem 1rem;
+    height:auto;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.items_sets {
+    display: flex;
+    /* 改用 flex 佈局 */
+    flex-wrap: wrap;
+    /* 自動換行 */
+    gap: 0;
+    /* 設定項目之間的間距 (垂直 0, 水平 20px) */
+    height: auto;
+    /* 讓高度隨內容增長，或保持固定 */
+    min-height: 100px;
+}
+
+.items_sets>div {
+    flex: 0 0 33%;
+    /* 每排顯示兩個，各佔一半寬度 */
+    margin-bottom: 5px;
+    /* 項目之間的垂直間距 */
+}
+
+.switch {
+    background-image: url(../images/icons/switch-white.png);
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.update {
+    background-image: url(../images/icons/remove-gray.png);
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.sport-item {
+    width: 90%;
+    padding: 1rem 1rem;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    display: none;
+}
+
+.sport-item.show {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+.sporttitle {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.sporttime,
+.sportkcal {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sport-list-remove {
+    cursor: pointer;
+    background-image: url(../images/icons/remove-black.png);
+    width: 35px;
+    height: 35px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.sport-item-text {
+    font-size: 1.5rem;
+}
+
+.black-dot {
+    font-size: 0.5rem;
+}
+
+
+/* ------------------ADD------------------------------ */
+.preview-area {
+    width: 100%;
+    height: 300px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.preview-area img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.clearBtn {
+    background-color: var(--black01);
+    border: none;
+    width: 15%;
+    height: 10%;
+}
+
+.clearBtn:active {
+    background-color: var(--black02) !important;
+    color: var(--black03) !important;
+}
+
+.clearBtn:hover {
+    background-color: var(--black02);
+    color: var(--black03);
+}
+
+.saveBtn,
+.watersaveBtn {
+    background-color: var(--black01);
+    border: none;
+}
+
+.saveBtn:active,
+.watersaveBtn:active {
+    background-color: var(--black02) !important;
+    color: var(--black03) !important;
+}
+
+.saveBtn:hover,
+.watersaveBtn:hover {
+    background-color: var(--black02);
+    color: var(--black03);
+}
+
+.sport-item-add {
+    background-image: url(../images/icons/add-nobg.png);
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.sport-item-remove {
+    background-image: url(../images/icons/remove.png);
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-size: cover;
+}
+@media (max-width:1200px) {
+    .items_sets>div {
+        flex: 0 0 50%;
+        /* 每排顯示兩個，各佔一半寬度 */
+        margin-bottom: 5px;
+        /* 項目之間的垂直間距 */
+    }
+}
+
+@media (max-width:992px) {
+
+    .diet-topheader {
+        padding-left: 20px;
+    }
+
+    .sport-topheader {
+        padding-left: 20px;
+    }
+
+    .right-content {
+        padding-left: 20px;
+    }
+
+    .calender {
+        width: 300px;
+    }
+
+    .weekdays div {
+        width: 8.28%;
+    }
+
+    .days div {
+        width: 14.28%;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 5px;
+        font-size: 1;
+    }
+
+    .water {
+        width: 300px;
+    }
+
+    .food-time {
+        font-size: 1.3rem;
+    }
+
+    .food-name {
+        font-size: 1.5rem;
+    }
+
+    .food-cal {
+        font-size: 1.3rem;
+    }
+
+    .food-sugar {
+        font-size: 0.8rem;
+    }
+
+    .food-na {
+        font-size: 0.8rem;
+    }
+
+    .sport-item-text {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width:768px) {
+    .right-content {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calender-width {
+        width: 100%;
+    }
+
+    .water {
+        width: 60%;
+        height: auto;
+        margin: 1.5rem 0px;
+        flex-direction: column;
+    }
+
+    .food-list {
+        padding-bottom: 5rem;
+    }
+
+    .food-card {
+        width: 95%;
+        padding: 1rem 1rem;
+        background-color: var(--black03);
+        height: 150px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .food-time {
+        font-size: 1rem;
+    }
+
+    .food-name {
+        font-size: 1.5rem;
+    }
+
+    .food-cal {
+        font-size: 1rem;
+    }
+
+    .food-sugar {
+        font-size: 0.8rem;
+    }
+
+    .food-na {
+        font-size: 0.8rem;
+    }
+
+    .plusbtn {
+        cursor: pointer;
+        background-image: url(../images/icons/add.png);
+        width: 35px;
+        height: 35px;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+
+    .waterbtn {
+        cursor: pointer;
+        background-image: url(../images/icons/add.png);
+        width: 35px;
+        height: 35px;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .calenderbtn {
+        cursor: pointer;
+        background-image: url(../images/icons/date.png);
+        width: 35px;
+        height: 35px;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+
+}
+
+@media (max-width:568px) {
+    .items_sets>div {
+        flex: 0 0 100%;
+        /* 每排顯示兩個，各佔一半寬度 */
+        margin-bottom: 5px;
+        /* 項目之間的垂直間距 */
+    }
+}

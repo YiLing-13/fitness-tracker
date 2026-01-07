@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管好你自己</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/color_font.css">
+    <link rel="stylesheet" href="./css/diet_sport.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+
+    <style>
+        .right-content {
+            position: relative;
+            width: calc(100vw - 100px);
+            margin-left: 100px;
+            height: 100vh;
+        }
+
+        .register-mask {
+            position: absolute;
+            inset: 0;
+        }
+
+        .register-mask::before {
+            position: absolute;
+            content: "";
+            inset: 0;
+            background: rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(3px);
+
+        }
+
+        .register_title {
+            position: absolute;
+            content: "";
+            inset: 0;
+
+            margin-top: 10rem;
+
+        }
+
+        .register {
+            background-color: var(--black01);
+            color: var(--black03);
+            width: 100px;
+
+            font-size: 1em;
+        }
+
+        .register:hover {
+            background-color: var(--black08);
+            color: var(--black02);
+        }
+
+        @media (max-width:992px) {
+            .right-content {
+                width: calc(100vw);
+                margin-left: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-flex custom-viewport-height">
+        <!-- ----------------------導覽---------------------- -->
+        <nav class="sidebar ">
+            <div class="nav-item mt-3">
+                <a><img src="./images/icons/bubbletea-color.png" alt="" width="80px" height="80px"></a>
+                <a href="index_notReg.html" class="nav-home mt-3 "></a>
+                <a href="diet_notReg.html" class="nav-record mt-3 "></a>
+                <a href="sport_notReg.html" class="nav-run mt-3 active"></a>
+            </div>
+            <div class="nav-date d-flex flex-column justify-content-end align-items-center my-auto">
+                <div class="m-2" id="navyear"></div>
+                <div id="navday"></div>
+            </div>
+        </nav>
+
+        <!-- 手機底部導覽 -->
+        <nav class="bottom-nav d-flex flex-row justify-content-around align-items-center d-lg-none">
+            <div class="bottom-nav-item flex-row">
+                <a href="index_notReg.html" class="nav-home"></a>
+                <a href="diet_notReg.html" class="nav-record "></a>
+                <a href="sport_notReg.html" class="nav-run active"></a>
+            </div>
+            <div class="nav-date d-none">
+                <div class="m-2" id="navyear"></div>
+                <div id="navday"></div>
+            </div>
+        </nav>
+
+        <!-- ------------------------------頂部header------------------------- -->
+        <div class="flex-grow-1 vh-100 ">
+            <header class="sport-topheader bg-01">
+                <div class="record d-flex h-100 align-items-center ">
+                    <div class="d-flex">
+                        <div class="h2">運動紀錄</div>
+                        <a href="#" class="plusbtn" data-bs-toggle="modal" data-bs-target="#plusModal"></a>
+                        <a href="#" class="calenderbtn mx-2 d-block d-md-none" data-bs-toggle="modal"
+                            data-bs-target="#calendarModal"></a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="right-content d-flex justify-content-center">
+                <div class="register-mask">
+                    <div class="register_title d-flex flex-column align-items-center">
+                        <div class="h3">註冊享有功能</div>
+                        <button class="btn register mt-3" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">加入會員</button>
+                    </div>
+                </div>
+
+                <!-- ------------------------------日曆------------------------- -->
+                <div class="d-flex flex-column calender-width">
+                    <div class="calender d-none d-md-block desktop-calendar">
+                        <div class="header d-flex justify-content-between align-items-center">
+                            <div class="prev btn"><i class="fa-solid fa-arrow-left"></i></div>
+                            <div class="month-year"></div>
+                            <div class="next btn"><i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                        <div class="weekdays d-flex">
+                            <div class="mx-2">Sun</div>
+                            <div class="mx-2">Mon</div>
+                            <div class="mx-2">Tue</div>
+                            <div class="mx-2">Wed</div>
+                            <div class="mx-2">Thu</div>
+                            <div class="mx-2">Fri</div>
+                            <div class="mx-2">Sat</div>
+                        </div>
+                        <div class="days d-flex flex-wrap"></div>
+                    </div>
+
+                    <!-- calendarModal -->
+                    <div class="modal fade" id="calendarModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="modal-calendar">
+                                        <div class="header d-flex justify-content-between align-items-center">
+                                            <div class="prev btn"><i class="fa-solid fa-arrow-left"></i></div>
+                                            <div class="month-year"></div>
+                                            <div class="next btn"><i class="fa-solid fa-arrow-right"></i></div>
+                                        </div>
+                                        <div class="weekdays d-flex">
+                                            <div class="mx-2">Sun</div>
+                                            <div class="mx-2">Mon</div>
+                                            <div class="mx-2">Tue</div>
+                                            <div class="mx-2">Wed</div>
+                                            <div class="mx-2">Thu</div>
+                                            <div class="mx-2">Fri</div>
+                                            <div class="mx-2">Sat</div>
+                                        </div>
+                                        <div class="days d-flex flex-wrap"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- ------------------------------標語--------------------------------- -->
+                    <div class="d-none d-md-block">
+                        <div class="slogan mt-4 d-flex justify-content-center align-items-center ">
+                            <!-- <div class="h3 ">slogan</div> -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ------------------------------清單------------------------- -->
+                <div class="sport-list d-flex flex-column align-items-center ">
+                    <!-- <div class="sport-card d-flex align-items-center mb-3 bg-01 text-white">
+                        <div class="d-flex flex-grow-1 justify-content-around align-items-center">
+                            <div class="h2">重訓</div>
+                            <div class="h4 weightcardhour"></div>
+                            <div class="h4 weightcardmin"></div>
+                            <div class="h4 weightcardkal"></div>
+                            <div class="row">
+                                <a href="#" class="switch" id="weightswitch"></a>
+                                <a href="#" class="clear"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sport-card d-flex align-items-center mb-3 bg-02 text-white">
+                        <div class="d-flex flex-grow-1 justify-content-around align-items-center">
+                            <div class="h2">有氧</div>
+                            <div class="h4 cardiocardhour"></div>
+                            <div class="h4 cardiocardmin"></div>
+                            <div class="h4 cardiocardkal"></div>
+                            <div class="row">
+                                <a href="#" class="switch" id="cardioswitch"></a>
+                                <a href="#" class="clear"></a>
+                            </div>
+                        </div>
+                    </div> -->
+                    
+
+                </div>
+
+                <!-- plusModal -->
+                <div class="modal fade" id="plusModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header bg-01">
+                                <h5 class="modal-title" id="exampleModalLabel">運動紀錄</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row g-2 ">
+                                        <div class="col-12">
+                                            <div class=" bg-07 p-3 rounded-3">
+                                                <label for="" class="form-label">運動項目</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="sportRadios"
+                                                        id="weightRadios" value="weightoption" checked>
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                        重訓
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="sportRadios"
+                                                        id="cardioRadios" value="cardiooption">
+                                                    <label class="form-check-label" for="cardioRadios">
+                                                        有氧
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="bg-07 p-3 rounded-3 ">
+                                                <label for="" class="form-label">總時間</label>
+                                                <div class="d-flex align-items-baseline">
+                                                    <input type="number" class="form-control hour" placeholder="時"
+                                                        max="23" min="0">
+                                                    <label for="" class="form-label">：</label>
+                                                    <input type="number" class="form-control min" placeholder="分"
+                                                        max="59" min="0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 ">
+                                            <div class="bg-07 p-3 rounded-3">
+                                                <label for="" class="form-label">總熱量</label>
+                                                <input type="text" class="form-control kal" placeholder="請輸入熱量">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class=" bg-07 p-3 rounded-3">
+                                                <label for="" class="form-label">運動細項</label>
+
+                                                <div id="sportitems">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <input type="text" class="form-control items"
+                                                            placeholder="ex.二頭肌.跑步">
+                                                        <input type="text" class="form-control set"
+                                                            placeholder="10下/1組 ">
+                                                        <button class="btn sport-item-remove"></button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="text-center">
+                                                    <button class="btn sport-item-add"></button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                                <!-- <button type="button" class="btn saveBtn" data-bs-dismiss="modal">確定</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            <!-- registerModalModal -->
+            <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-01">
+                            <h5 class="modal-title" id="exampleModalLabel">加入會員</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row g-2 ">
+                                    <div class="col-12">
+                                        <div class=" bg-07 p-3 rounded-3">
+                                            <div>
+                                                <label for="" class="form-label">帳號</label>
+                                                <input type="text" class="form-control" id="account"
+                                                    placeholder="請輸入5-10位英文數字帳號">
+                                            </div>
+                                            <div class="mt-3">
+                                                <label for="" class="form-label">密碼</label>
+                                                <input type="password" class="form-control" id="password"
+                                                    placeholder="請輸入8-12位英文數字密碼">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="bg-07 p-3 rounded-3 ">
+                                            <label for="" class="form-label">暱稱</label>
+                                            <input type="text" class="form-control" id="nickname" placeholder="請輸入暱稱">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="bg-07 p-3 rounded-3 h-100 ">
+                                            <div class="d-flex h-100 align-items-center">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gender"
+                                                        value="male" id="maleRadios" checked>
+                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                        男
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mx-3">
+                                                    <input class="form-check-input" type="radio" name="gender"
+                                                        value="female" id="femaleRadios">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        女
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <div class="bg-07 p-3 rounded-3">
+                                            <label for="" class="form-label">年齡</label>
+                                            <input type="number" class="form-control" id="age" placeholder="請輸入年齡">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <div class="bg-07 p-3 rounded-3">
+                                            <label for="" class="form-label">身高 cm</label>
+                                            <input type="number" class="form-control" id="height" placeholder="請輸入身高">
+                                        </div>
+                                    </div>
+                                    <div class="col-6 ">
+                                        <div class="bg-07 p-3 rounded-3">
+                                            <label for="" class="form-label">體重 kg</label>
+                                            <input type="number" class="form-control" id="weight" placeholder="請輸入體重">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="bg-07 p-3 rounded-3">
+                                            <label for="" class="form-label">日常活動量</label>
+                                            <select class="form-select form-select-sm" id="activity"
+                                                aria-label=".form-select-sm example">
+                                                <option selected Disabled id="activity_reset">---請選擇日常活動量---</option>
+                                                <option value="1.2">久坐（例如上班族）</option>
+                                                <option value="1.375">輕度活動（偶爾運動）</option>
+                                                <option value="1.55">中度活動（每週 3～5 次運動）</option>
+                                                <option value="1.72">高度活動（幾乎每天運動）</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn cacelBtn" data-bs-dismiss="modal">取消</button>
+                            <button type="button" class="btn saveBtn" id="register" data-bs-dismiss="modal">確定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/calender.js"></script>
+    <script src="./js/register.js"></script>
+    <script src="./js/page2.js"></script>
+    <script src="https://kit.fontawesome.com/513e02c78d.js" crossorigin="anonymous"></script>
+    <script>
+        const register = document.querySelector(".register");
+
+        function resetReg() {
+            account.value = "";
+            password.value = "";
+            nickname.value = "";
+            age.value = "";
+            height.value = "";
+            weight.value = "";
+            document.querySelector("#maleRadios").checked = true;
+            document.querySelector("#femaleRadios").checked = false;
+            document.querySelector("#activity_reset").selected = true;
+        }
+
+        register.addEventListener("click", () => {
+            resetReg();
+        });
+
+    </script>
+</body>
+
+</html>

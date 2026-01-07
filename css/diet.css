@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    font-family: "Noto Sans TC", sans-serif;
+    /* overflow: hidden; */
+    
+}
+
+.right-content {
+    /* background-color: #ffe8e8; */
+    flex-grow: 1;
+    padding: 1.5rem;
+    max-width: 1400px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+.topheader {
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+
+.topheader::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    /* background-color: #fff; */
+    border-radius: 8%;
+    background-image: url(../images/icons/bubbletea.png);
+    filter: drop-shadow(4px 0px 2px rgba(0, 0, 0, 0.4));
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: 100% 0;
+}
+
+.plusbtn {
+    cursor: pointer;
+    background-image: url(../images/icons/add.png);
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/* --------------------------日曆--------------------------------- */
+.calender {
+    background-color: rgb(255, 255, 255);
+    width: 350px;
+    padding: 15px;
+    border-radius: 30px;
+    overflow: hidden;
+    color: black;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    
+}
+
+.header {
+    padding: 5px;
+    background-color: var(--green01);
+    border-radius: 20px;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+#month-year {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.days {
+    height: auto;
+}
+
+
+.weekdays div,
+.days div {
+    width: 14.28%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-size: 1;
+}
+
+.days div {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.days div:hover {
+    background-color: var(--green02);
+    color: white;
+}
+
+.days .today {
+    background-color: var(--green01);
+    color: white;
+}
+
+.days .prev-day,
+.next-day {
+    color: #afafaf;
+}
+
+
+/* ----------------------slogan-------------------------------- */
+
+.slogan{
+    width: 350px;
+    height: 250px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+
+/* ------------------food-list------------------------------ */
+
+.food-list {
+    width: 100%;
+    max-width: 800px;
+    overflow-y: scroll;
+    height: calc(100vh - 190px); 
+    /* margin-top: 20px; */
+    /* background-color: #997a7a; */
+}
+
+.food-card{
+    width: 90%;
+    padding: 1rem 1rem;
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.food-img img {
+    width: 130px;
+    height: 130px;
+    border-radius: 20px;
+    object-fit: cover;
+}

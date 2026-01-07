@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管好你自己</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/color_font.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <script src="https://kit.fontawesome.com/513e02c78d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="d-flex custom-viewport-height ">
+        <!-- ----------------------導覽---------------------- -->
+        <nav class="sidebar ">
+            <div class="nav-item mt-3">
+                <a href="#"><img src="./images/icons/bubbletea-color.png" alt="" width="80px" height="80px"></a>
+                <a href="index.html" class="nav-home mt-3 active"></a>
+                <a href="diet.html" class="nav-record mt-3"></a>
+                <a href="sport.html" class="nav-run mt-3"></a>
+            </div>
+            <div class="nav-date d-flex flex-column justify-content-end align-items-center my-auto">
+                <div class="m-2" id="navyear"></div>
+                <div id="navday" ></div>
+            </div>
+        </nav>
+
+        <!-- 手機底部導覽 -->
+        <nav class="bottom-nav d-flex flex-row justify-content-around align-items-center d-lg-none">
+            <div class="bottom-nav-item flex-row">
+                <a href="index.html" class="nav-home active "></a>
+                <a href="diet.html" class="nav-record"></a>
+                <a href="sport.html" class="nav-run"></a>
+            </div>
+            <div class="nav-date d-none">
+                <div class="m-2" id="navyear"></div>
+                <div id="navday"></div>
+            </div>
+        </nav>
+
+        <div class="right-content">
+
+            <!-- ----------------------頂部標題---------------------- -->
+            <header>
+                <div class="d-none d-lg-block mt-4 px-lg-3">
+                    <div class="d-flex align-items-baseline">
+                        <div class="title">Do Better You</div>
+                        <div class="everyday"><i class="fa-solid fa-calendar-check"></i></i>每日建議</div>
+                        <div class="reference"><i class="fa-solid fa-circle-exclamation"></i>僅供參考</div>
+                        <div class="person ms-auto mx-3">XX你好<i class="fa-solid fa-heart"></i></div>
+                        <button class="btn loginout" id="loginout">登出</button>
+                    </div>
+                </div>
+
+                <!-- 手機板標題 -->
+                <div class="d-block d-lg-none ">
+                    <div class="top-title d-flex align-items-baseline">
+                        <div class="title">YOUDOYOU</div>
+                        <div class="person">XX你好<i class="fa-solid fa-heart"></i></div>
+                        <button class="btn loginout" id="loginout">登出</button>
+                    </div>
+                    <div class="d-flex align-items-baseline ">
+                        <div class="everyday"><i class="fa-solid fa-calendar-check"></i></i>每日建議</div>
+                        <div class="reference"><i class="fa-solid fa-circle-exclamation"></i>僅供參考</div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ----------------------營養區塊---------------------- -->
+            <div class="container-fluid">
+                <div class="row g-3 mt-lg-3">
+                    <div class="col-6 col-lg-3">
+                        <div
+                            class="diet-item calorie-img bg-01 h-100 d-flex flex-column justify-content-between rounded-5">
+                            <div class="d-flex justify-content-between p-4 mt-2">
+                                <div class="h2 text-white fw-bold diet-title">卡路里</div>
+                                <img src="./images/icons/fire-s-white.png" alt="" class="box-img d-block d-lg-none">
+                            </div>
+                            <div class="d-flex justify-content-between align-items-baseline p-4 ">
+                                <div class="kalNum diet-number display-5"></div>
+                                <div class="h4 text-white diet-unit">kal</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div
+                            class="diet-item water-img bg-02 h-100  d-flex flex-column justify-content-between rounded-5">
+                            <div class="d-flex justify-content-between p-4 mt-2">
+                                <div class="h2 text-white fw-bold diet-title">水分</div>
+                                <img src="./images/icons/water-white.png" alt="" class="box-img d-block d-lg-none">
+                            </div>
+                            <div class="d-flex justify-content-between align-items-baseline p-4 ">
+                                <div class="waterNum diet-number display-5"></div>
+                                <!-- <div class="display-5 text-white fw-bold ">1500</div> -->
+                                <div class="h4 text-white diet-unit">cc</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6  col-lg-3">
+                        <div
+                            class="diet-item sugar-img bg-01 h-100 d-flex flex-column justify-content-between rounded-5 sugar-bgc">
+                            <div class="d-flex justify-content-between p-4 mt-2">
+                                <div class="h2 text-white fw-bold diet-title">糖分</div>
+                                <img src="./images/icons/sugar-white.png" alt="" class="box-img d-block d-lg-none">
+                            </div>
+                            <div class="d-flex justify-content-between align-items-baseline p-4">
+                                <div class="sugarNum diet-number display-5"></div>
+                                <!-- <div class="display-5 text-white fw-bold diet-number">15</div> -->
+                                <div class="h4 text-white diet-unit">g</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6  col-lg-3">
+                        <div
+                            class="diet-item na-img bg-02 h-100 d-flex flex-column justify-content-between rounded-5 na-bgc">
+                            <div class="d-flex justify-content-between p-4 mt-2">
+                                <div class="h2 text-white fw-bold diet-title">鈉含量</div>
+                                <img src="./images/icons/na-white.png" alt="" class="box-img d-block d-lg-none">
+                            </div>
+                            <div class="d-flex justify-content-between align-items-baseline p-4">
+                                <div class="naNum diet-number display-5"></div>
+                                <!-- <div class="display-5 text-white fw-bold diet-number">15</div> -->
+                                <div class="h4 text-white diet-unit">mg</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ----------------------運動區塊---------------------- -->
+            <div class="container-fluid">
+                <div class="row sport">
+                    <div class="col-12 col-md-12 col-lg-8 col-xxl-8 d-none d-lg-block ">
+                        <div class="sport-item bg-01 h-100 rounded-5 d-flex justify-content-end">
+                            <div class="slogan-img d-flex flex-column justify-content-center  fw-900">
+                                <div class="slogan h2 fw-bold ms-auto mx-4">抓著跑步機跑步</div>
+                                <div class="slogan h2 fw-bold mt-3 ms-auto mx-4">消耗熱量降低20%喔!</div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-4 col-xxl-4">
+                        <div
+                            class="sport-item sport-img bg-02 h-100 d-flex flex-column justify-content-between sport-bgc rounded-5">
+                            <div class=" d-flex p-4 mt-2 justify-content-between ">
+                                <div class="h2 fw-bold sport-title ">運動量</div>
+                                <img src="./images/icons/Doodles-black.png" alt="" class="d-block d-lg-none box-img">
+                            </div>
+                            <div class="d-flex justify-content-between align-items-baseline p-4">
+                                <div class="display-5 fw-bold sport-number">500</div>
+                                <div class="h4 sport-unit">kal</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/calender.js"></script>
+    <script>
+        const kalNum = document.querySelector(".kalNum");
+        function renderkal(data) {
+            const kalnewRow = document.createElement("div");
+            kalnewRow.classList.add("text-white", "fw-bold");
+            kalnewRow.textContent= data.kal;
+            kalNum.appendChild(kalnewRow);
+        }
+
+        const sugarNum = document.querySelector(".sugarNum");
+        function rendersugar(data) {
+            const sugarnewRow = document.createElement("div");
+            sugarnewRow.classList.add("text-white", "fw-bold");
+            sugarnewRow.textContent= data.sugar;
+            sugarNum.appendChild(sugarnewRow);
+        }
+
+        const naNum = document.querySelector(".naNum");
+        function renderna(data) {
+            const nanewRow = document.createElement("div");
+            nanewRow.classList.add("text-white", "fw-bold");
+            nanewRow.textContent= data.na;
+            naNum.appendChild(nanewRow);
+        }
+
+        const waterNum = document.querySelector(".waterNum");
+        function renderwater(data) {
+            const waternewRow = document.createElement("div");
+            waternewRow.classList.add("text-white", "fw-bold");
+            waternewRow.textContent= data.water;
+            waterNum.appendChild(waternewRow);
+        }
+
+        axios.get("showitem.php")
+        .then(res => {
+            console.log(res.data);
+            renderkal(res.data);
+            rendersugar(res.data);
+            renderna(res.data);
+            renderwater(res.data);
+        })
+        .catch(err => console.error(err));
+    </script>
+</body>
+
+</html>
