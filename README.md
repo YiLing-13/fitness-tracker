@@ -55,3 +55,18 @@ return [
   'password' => '',
   'database' => 'fitness'
 ];
+```
+
+---
+
+## 🖼 Screenshots
+- Login page
+- Add food record
+- Daily summary
+
+---
+
+## 📌 Demo 說明
+- 本專案為 PHP + MySQL 的完整後端系統
+- GitHub Pages 僅作為 前端 UI 展示
+- 完整功能需搭配後端與資料庫環境
